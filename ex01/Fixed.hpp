@@ -14,6 +14,7 @@
 # define FIXED_HPP
 
 # include <iostream>
+# include <cmath>
 # define COL_R	"\033[31m"
 # define COL_Y	"\033[33m"
 # define COL_B	"\033[34m"

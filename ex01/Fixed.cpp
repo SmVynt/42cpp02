@@ -23,7 +23,7 @@ Fixed::Fixed (const int raw){
 
 Fixed::Fixed (const float raw){
 	std::cout << "Float constructor called" << std::endl;
-	rawBits = raw * (1 << fractionalBits);
+	rawBits = roundf(raw * (1 << fractionalBits));
 };
 
 Fixed::Fixed (const Fixed &other) : rawBits(other.getRawBits()) {
@@ -43,7 +43,6 @@ Fixed::~Fixed (){
 };
 
 int		Fixed::getRawBits(void) const {
-	// std::cout << "getRawBits member function called" << std::endl;
 	return (this->rawBits);
 };
 

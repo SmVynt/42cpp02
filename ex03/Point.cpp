@@ -20,18 +20,14 @@ Point::Point (const Point &other) : x(other.getX()), y(other.getY()) {};
 
 Point &Point::operator = (const Point &other)
 {
-	if (this != &other)
-	{
-		x = other.getX();
-		y = other.getY();
-	}
+	// essentially just for the compiler, as x and y are const
+	// Just to comply with the orthodox canonical form
+	(void)other;
 	return (*this);
 };
 
 Point::~Point () {};
 
-void		Point::setX(const float a) {this->x = Fixed(a);};
-void		Point::setY(const float a) {this->y = Fixed(a);};
 Fixed		Point::getX(void) const {return (this->x);};
 Fixed		Point::getY(void) const {return (this->y);};
 

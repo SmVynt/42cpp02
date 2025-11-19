@@ -29,13 +29,11 @@ class Point
 		Point(const Point &other);
 		Point &operator = (const Point &other);
 		~Point();
-		void		setX(const float x);
-		void		setY(const float y);
 		Fixed		getX(void) const;
 		Fixed		getY(void) const;
 	private:
-		Fixed		x;
-		Fixed		y;
+		Fixed const	x;
+		Fixed const	y;
 };
 
 bool	bsp(Point const a, Point const b, Point const c, Point const point);

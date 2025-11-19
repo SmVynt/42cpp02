@@ -19,7 +19,6 @@ bool	bsp(Point const a, Point const b, Point const c, Point const point)
 			+ a.getX() * (b.getY() - c.getY())
 			+ (b.getX() * c.getY())
 			- (b.getY() * c.getX()));
-	// std::cout << "The area is " << Area << std::endl;
 	if (Area == Fixed(0))
 		return (false);
 	Fixed	s = (a.getY() * c.getX()
@@ -32,8 +31,7 @@ bool	bsp(Point const a, Point const b, Point const c, Point const point)
 				+ (a.getY() - b.getY()) * point.getX()
 				+ (b.getX() - a.getX()) * point.getY())
 					/ (Fixed(2) * Area);
-	// std::cout << "S: " << s << "\n" << "T: " << t << std::endl;
-	if (s >= 0 && t >= 0 && (s + t) <= Fixed(1))
+	if (s > Fixed(0) && t > Fixed(0) && (s + t) < Fixed(1))
 		return (true);
 	return (false);
 };
